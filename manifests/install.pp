@@ -68,7 +68,6 @@ class thanos::install (
   Stdlib::Absolutepath                $usershell          = $thanos::usershell,
   Array[String]                       $extra_groups       = $thanos::extra_groups,
 ) {
-  assert_private()
 
   case $install_method {
     'url': {
