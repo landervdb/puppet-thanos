@@ -39,5 +39,9 @@ define thanos::config::storage (
   file { $title:
     ensure  => $_ensure,
     content => $configs.to_yaml(),
+    owner   => $::thanos::user,
+    group   => $::thanos::group,
+    mode    => '0600',
+
   }
 }
